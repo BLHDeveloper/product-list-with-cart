@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Product list with cart</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <main class="container">
+    <section class="products-section">
+      <h1 class="page-title">Desserts</h1>
+      <div id="product-grid" class="product-grid">
+        <!-- Products will be injected here by app.js -->
+      </div>
+    </section>
+
+    <aside class="cart-section">
+      <div class="cart-panel">
+        <h2 class="cart-title">Your Cart (<span id="cart-count">0</span>)</h2>
+        
+        <div id="cart-empty" class="cart-empty">
+          <img src="./assets/images/illustration-empty-cart.svg" alt="" aria-hidden="true">
+          <p>Your added items will appear here</p>
+        </div>
+
+        <div id="cart-filled" class="cart-filled hidden">
+          <ul id="cart-items" class="cart-items-list" aria-live="polite">
+            <!-- Cart items will be injected here -->
+          </ul>
+          
+          <div class="cart-total-container">
+            <span class="cart-total-label">Order Total</span>
+            <span id="cart-total-price" class="cart-total-price">$0.00</span>
+          </div>
+          
+          <div class="carbon-neutral-badge">
+            <img src="./assets/images/icon-carbon-neutral.svg" alt="" aria-hidden="true">
+            <p>This is a <strong>carbon-neutral</strong> delivery</p>
+          </div>
+          
+          <button id="btn-confirm-order" class="btn-confirm">Confirm Order</button>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <dialog id="order-modal" class="order-modal">
+    <div class="modal-content">
+      <img src="./assets/images/icon-order-confirmed.svg" alt="" class="modal-icon" aria-hidden="true">
+      <h2 class="modal-title">Order Confirmed</h2>
+      <p class="modal-subtitle">We hope you enjoy your food!</p>
+      
+      <div class="modal-order-summary">
+        <ul id="modal-items" class="modal-items-list">
+          <!-- Modal items will be injected here -->
+        </ul>
+        <div class="modal-total-container">
+          <span class="modal-total-label">Order Total</span>
+          <span id="modal-total-price" class="modal-total-price">$0.00</span>
+        </div>
+      </div>
+      
+      <button id="btn-start-new" class="btn-confirm">Start New Order</button>
+    </div>
+  </dialog>
+
+</body>
+</html>
